@@ -331,4 +331,5 @@ ASALocalRun/
 # Local History for Visual Studio
 .localhistory/
 
-App_Data/
+App_Data/MvcInventory.Models.ProductDBContext.mdf
+App_Data/MvcInventory.Models.ProductDBContext_log.mdf
