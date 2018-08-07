@@ -8,13 +8,13 @@
         <button type="button" class="btn btn-link btn-lg">@Html.ActionLink("Add Product", "Create")</button>
         @using (Html.BeginForm("Index", "Products", FormMethod.Get))
         {
-        <p>
-            Type: @Html.DropDownList("type", "All")
-            Name: @Html.TextBox("searchString")
-            <input type="submit" value="Filter" />
-        </p>
-         }
-     </p>
+            <p>
+              Type: @Html.DropDownList("type", "All")
+              Name: @Html.TextBox("searchString")
+             <input type="submit" value="Filter" />
+            </p>
+        }
+       
 </div>
         <table class="table table-hover">
             <tr>
@@ -30,11 +30,15 @@
                 <th>
                     @Html.DisplayNameFor(model => model.Type)
                 </th>
-                <th></th>
+                
             </tr>
-            @foreach (var item in Model)
-            {
+            @{ 
+                foreach (var item in Model)
+                {
                 <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ID)
+                    </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Name)
                     </td>
@@ -53,5 +57,10 @@
                         @Html.ActionLink("Delete", "Delete", new { id = item.ID })
                     </td>
                 </tr>
-            }
+                    }
+                }
         </table>
+                    <td>
+                        @{ }
+                    </td>
+

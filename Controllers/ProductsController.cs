@@ -75,7 +75,6 @@ namespace MvcInventory.Controllers
 
             return View(product);
         }
-
         // GET: Products/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -90,7 +89,6 @@ namespace MvcInventory.Controllers
             }
             return View(product);
         }
-
         // POST: Products/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -140,6 +138,15 @@ namespace MvcInventory.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+        
+        public ActionResult totalPrice()
+        {
+            int total = 0;
+            foreach(var product in db.Products)
+                total++;
+            ViewBag.Sum = total;
+            return View((int)total);
         }
     }
 }
